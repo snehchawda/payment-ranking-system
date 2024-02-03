@@ -16,4 +16,4 @@ The dependencies that need to be downloaded are included in package.json file.
 - Once above steps are completed, open terminal and type 'npm start'
 
 ## TEST 
-Once the mongodb is connected and server is started go to: http://192.168.29.177:3000/
+Once the mongodb is connected and server is started go to: http://localhost:3000/
