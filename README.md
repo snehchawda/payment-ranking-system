@@ -1,19 +1,30 @@
-# Project - PAYMENT RANKING SYSTEM
+## PAYMENT RANKNNING SYSTEM
 
-## Table of Contents
+This project is a Payment Ranking System that ranks users based on their payment amounts and allows predictions of future ranks. It also provides endpoints for recording payments and fetching user ranks.
 
-## DEVELOPMENT
-This project is developed using 
-Nodejs v21.5.0
-npm v10.2.4
+## TABLE OF CONTENTS
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+
+## PREREQUISITES
+Before you begin, ensure you have the following installed:
+
+Node.js v21.5.0
+MongoDB (Make sure MongoDB is running)
 
 The dependencies that need to be downloaded are included in package.json file.
 
-## START WITH THE PROJECT
-- Clone the project using - git clone "link"
-- Install the dependencies
-- Keep the .env file in your project folder
-- Once above steps are completed, open terminal and type 'npm start'
+## INSTALLATION
+Clone the repository:
+git clone https://github.com/snehchawda/payment-ranking-system.git
 
-## TEST 
-Once the mongodb is connected and server is started go to: http://192.168.29.177:3000/
+Install dependencies:
+npm install
+
+## RUNNING THE APPLICATION
+Run the application using:
+npm start
+
+Once the mongodb is connected and server is started,
+Access the API at: http://localhost:3000

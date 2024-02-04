@@ -1,9 +1,8 @@
-// const mongoose = require('mongoose');
 import mongoose from 'mongoose';
 
 const paymentSchema = new mongoose.Schema({
     userId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true,
     },

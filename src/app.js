@@ -1,31 +1,27 @@
-// const express = require('express');
-// const database = require('./loaders/database');
-// const { logger, logHttpRequest } = require('./loaders/logger');
-// const routes = require('./routes');
-import express from 'express';
-import database from './loaders/database.js';
-// import { logger, logHttpRequest } from './loaders/logger.js';
+import express from 'express'; 
 import logger from './loaders/logger.js';
 import routes from './routes/index.js';
+import connection from './loaders/database.js'
+// import bodyParser from 'body-parser';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Attach routes to the Express app
-app.use('/', routes);
+app.use(express.json()); // body-parsing
+app.use('/', routes);   // routes
 
-database.once('connected', () => {
-    // console.log('Connected to MongoDB');
-    logger.info('Connected to MongoDB');
+async function startServer() {
+    await connection;
+    const server = app.listen(PORT, () => {
+        logger.info(`
+        ###############################
+        Server listening on port: ${PORT} 
+        ###############################
+        `);
+      }).on('error', err => {
+        logger.error(err);
+        process.exit(1);
+      });
+}
 
-    // Start the server
-    app.listen(PORT, () => {
-        // console.log(`Server is running on port ${PORT}`);
-        logger.info(`Server is running on port ${PORT}`);
-    });
-});
-
-database.on('error', (error) => {
-    // console.error('Error connecting to MongoDB:', error.message);
-    logger.error('Error connecting to MongoDB:', error.message);
-});
+startServer();

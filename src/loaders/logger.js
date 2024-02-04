@@ -11,12 +11,4 @@ const logger = winston.createLogger({
     ),
 });
 
-// Function to log HTTP requests
-// const logHttpRequest = (req, res, next) => {
-//     logger.info(`${req.method} ${req.url}`);
-//     next();
-// };
-
-// module.exports = { logger };
-
 export default logger;
